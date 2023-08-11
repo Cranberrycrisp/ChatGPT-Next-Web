@@ -3,8 +3,9 @@ import { SubmitKey } from "../store/config";
 const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
-    Unauthorized:
-      "访问密码不正确或为空，请前往[登录](/#/auth)页输入正确的访问密码，或者在[设置](/#/settings)页填入你自己的 OpenAI API Key。",
+    // Unauthorized:
+    //   "访问密码不正确或为空，请前往[登录](/#/auth)页输入正确的访问密码，或者在[设置](/#/settings)页填入你自己的 OpenAI API Key。",
+    Unauthorized: "主人不让我跟陌生人玩，你有[访问密码](/#/auth)吗😆，或者你自己的[OpenAI API Key](/#/settings)。",
   },
   Auth: {
     Title: "需要密码",
@@ -17,7 +18,7 @@ const cn = {
     ChatItemCount: (count: number) => `${count} 条对话`,
   },
   Chat: {
-    SubTitle: (count: number) => `共 ${count} 条对话`,
+    SubTitle: (count: number) => `跟小然聊了 ${count} 句话，感觉小然好可爱嘿嘿嘿`,
     EditMessage: {
       Title: "编辑消息记录",
       Topic: {
@@ -81,7 +82,8 @@ const cn = {
     Download: "下载文件",
     Share: "分享到 ShareGPT",
     MessageFromYou: "来自你的消息",
-    MessageFromChatGPT: "来自 ChatGPT 的消息",
+    // MessageFromChatGPT: "来自 ChatGPT 的消息",
+    MessageFromChatGPT: "来自 小然 的消息",
     Format: {
       Title: "导出格式",
       SubTitle: "可以导出 Markdown 文本或者 PNG 图片",
@@ -106,8 +108,10 @@ const cn = {
     Clear: "清除选中",
   },
   Memory: {
-    Title: "历史摘要",
-    EmptyContent: "对话内容过短，无需总结",
+    // Title: "历史摘要",
+    Title: "和小然的对话摘要",
+    // EmptyContent: "对话内容过短，无需总结",
+    EmptyContent: "小然脑袋空空",
     Send: "自动压缩聊天记录并作为上下文发送",
     Copy: "复制摘要",
     Reset: "[unused]",
@@ -115,7 +119,8 @@ const cn = {
   },
   Home: {
     NewChat: "新的聊天",
-    DeleteChat: "确认删除选中的对话？",
+    // DeleteChat: "确认删除选中的对话？",
+    DeleteChat: "要走了吗？拜拜哦(*´▽｀)ノシ",
     DeleteToast: "已删除会话",
     Revert: "撤销",
   },
@@ -258,8 +263,10 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "有什么可以帮你的吗",
-    Error: "出错了，稍后重试吧",
+    // BotHello: "有什么可以帮你的吗",
+    BotHello: "嗨嗨嗨，有什么问题就交给小然吧，随时待命✨\n(❀╹◡╹)ゞ",
+    // Error: "出错了，稍后重试吧",
+    Error: "小然在发呆...",
     Prompt: {
       History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
       Topic:

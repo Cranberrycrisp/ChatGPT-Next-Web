@@ -118,10 +118,23 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          ChatGPT Next
+          <img src="https://ghproxy.com/https://raw.githubusercontent.com/Cranberrycrisp/img/main/images/chat-web-sidebar-sub-title.svg"
+            style={{
+              // display: "flex",
+              // justifyContent: "center",
+              // alignItems: "center",
+              display: "block",
+              // margin: "0 auto",
+              margin: "-20% auto 0px",
+              maxWidth: "80%",
+              // maxHeight: "70%",
+              overflow: "hidden"
+            }}
+          />
+          然の小助手
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+          你好，我是rr的私人小助手，我可以帮你翻译、计算、提建议、解答专业问题或进行角色扮演😊
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />

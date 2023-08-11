@@ -30,15 +30,38 @@ const ACCESS_CODES = (function getAccessCodes(): Set<string> {
   }
 })();
 
+// export const getServerSideConfig = () => {
+//   if (typeof process === "undefined") {
+//     throw Error(
+//       "[Server Config] you are importing a nodejs-only module outside of nodejs",
+//     );
+//   }
+
+//   return {
+//     apiKey: process.env.OPENAI_API_KEY,
+//     code: process.env.CODE,
+//     codes: ACCESS_CODES,
+//     needCode: ACCESS_CODES.size > 0,
+//     baseUrl: process.env.BASE_URL,
+//     proxyUrl: process.env.PROXY_URL,
+//     isVercel: !!process.env.VERCEL,
+//     hideUserApiKey: !!process.env.HIDE_USER_API_KEY,
+//     disableGPT4: !!process.env.DISABLE_GPT4,
+//     hideBalanceQuery: !!process.env.HIDE_BALANCE_QUERY,
+//   };
+// };
 export const getServerSideConfig = () => {
   if (typeof process === "undefined") {
     throw Error(
       "[Server Config] you are importing a nodejs-only module outside of nodejs",
     );
   }
+  // 从这里开始
+  const apiKeys = (process.env.OPENAI_API_KEY ?? '').split(',')
+  const apiKey = apiKeys.at(Math.floor(Math.random() * apiKeys.length)) ?? ''
 
   return {
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey, //到这里结束
     code: process.env.CODE,
     codes: ACCESS_CODES,
     needCode: ACCESS_CODES.size > 0,
@@ -50,3 +73,36 @@ export const getServerSideConfig = () => {
     hideBalanceQuery: !!process.env.HIDE_BALANCE_QUERY,
   };
 };
+
+// let apiKeyIndex = 0; // 用于跟踪当前使用的 API 密钥的索引
+
+// export const getServerSideConfig = () => {
+//   if (typeof process === "undefined") {
+//     throw Error(
+//       "[Server Config] you are importing a nodejs-only module outside of nodejs",
+//     );
+//   }
+//   const apiKeys = (process.env.OPENAI_API_KEY ?? '').split(',');
+  
+//   // 这行逻辑是随机选择一个 API
+//   // const apiKey = apiKeys.at(Math.floor(Math.ramdom() * apiKeys.length)) ?? ''
+
+//   // 获取当前索引对应的 API 密钥
+//   const apiKey = apiKeys[apiKeyIndex % apiKeys.length] ?? '';
+
+//   // 递增索引
+//   apiKeyIndex++;
+
+//   return {
+//     apiKey, 
+//     code: process.env.CODE,
+//     codes: ACCESS_CODES,
+//     needCode: ACCESS_CODES.size > 0,
+//     baseUrl: process.env.BASE_URL,
+//     proxyUrl: process.env.PROXY_URL,
+//     isVercel: !!process.env.VERCEL,
+//     hideUserApiKey: !!process.env.HIDE_USER_API_KEY,
+//     disableGPT4: !!process.env.DISABLE_GPT4,
+//     hideBalanceQuery: !!process.env.HIDE_BALANCE_QUERY,
+//   };
+// };

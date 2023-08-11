@@ -464,15 +464,19 @@ export function ImagePreviewer(props: {
             <NextImage
               src={ChatGptIcon.src}
               alt="logo"
-              width={50}
-              height={50}
+              // width={50}
+              // height={50}
+              width={30}
+              height={30}
             />
           </div>
 
           <div>
-            <div className={styles["main-title"]}>ChatGPT Next Web</div>
+            {/* <div className={styles["main-title"]}>ChatGPT Next Web</div> */}
+            <div className={styles["main-title"]}>然の小助手</div>
             <div className={styles["sub-title"]}>
-              github.com/Yidadaa/ChatGPT-Next-Web
+              {/* github.com/Yidadaa/ChatGPT-Next-Web */}
+              https://chat.flyrr.xyz/
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />
