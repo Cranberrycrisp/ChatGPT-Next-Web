@@ -155,7 +155,7 @@ export function SideBar(props: { className?: string }) {
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
         <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          <img src="https://ghps.cc/https://raw.githubusercontent.com/Cranberrycrisp/img/main/images/chat-web-sidebar-sub-title.svg"
+          <img src="https://gh.flyrr.cc/https://raw.githubusercontent.com/Cranberrycrisp/img/main/images/chat-web-sidebar-sub-title.svg"
             style={{
               // display: "flex",
               // justifyContent: "center",
